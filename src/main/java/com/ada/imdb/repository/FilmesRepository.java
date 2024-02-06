@@ -1,3 +1,9 @@
+package com.ada.imdb.repository;
+
+import com.ada.imdb.model.Filme;
+
+import java.util.List;
+
 public interface FilmesRepository{
 
     public Filme inserir(Filme filme);
