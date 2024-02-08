@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface FilmesRepository{
 
-    public Filme inserir(Filme filme);
+    public default Filme inserir(Filme filme) {
+        return null;
+    }
 
     public Filme atualizar(Filme filme);
 
