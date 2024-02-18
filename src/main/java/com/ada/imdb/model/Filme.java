@@ -1,44 +1,39 @@
 package com.ada.imdb.model;
 
+import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Filme {
-    private int id;
-    private String nome;
-    private String genero;
-    private String ano;
-    private String classificacao;
-    private double nota;
-    private String sinopse;
-    List<Ator> atores = new ArrayList<>();
-    List<Diretor> diretores = new ArrayList<>();
+    protected int idFilme;
+    protected String titulo;
+    protected List<String> genero;
+    protected Duration duracao;
+    protected int ano;
+    protected String classificacao;
+    protected double nota;
+    protected String sinopse;
+    protected List<Ator> atores = new ArrayList<>();
+    protected List<Diretor> diretores = new ArrayList<>();
 
-    public Filme(String nome) {
-        this.nome = nome;
+    protected Filme(){
+
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static FilmeBuilder builder() {
+        return new FilmeBuilder();
     }
 
     @Override
     public String toString() {
-        return "Filme{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
+        return "Filme: " + titulo +
+                " (" + idFilme +
+                ") | Data de Lançamento: " + ano +
+                " | Duração: " + duracao +
+                " | Diretores: " + String.join(", ", diretores.stream()
+                .map(Diretor::getNome)
+                .collect(Collectors.toList()));
     }
 }
