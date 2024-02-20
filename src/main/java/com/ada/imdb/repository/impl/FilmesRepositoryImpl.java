@@ -1,11 +1,5 @@
 package com.ada.imdb.repository.impl;
 
-import com.ada.imdb.model.Filme;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 public class FilmesRepositoryAction {
 
 //    private static final List<Filme> filmes = new ArrayList<>();
