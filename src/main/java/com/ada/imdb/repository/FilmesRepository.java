@@ -1,19 +1,15 @@
 package com.ada.imdb.repository;
 
-import com.ada.imdb.model.Filme;
-
+import com.ada.imdb.model.Filme.Filme;
 import java.util.List;
 
-public interface FilmesRepository{
+public interface FilmesRepository {
 
-    public default Filme inserir(Filme filme) {
-        return null;
-    }
+    public Filme inserir(Filme filme);
 
-    public Filme atualizar(Filme filme);
+    public Filme atualizar(int id, Filme filme);
 
-    public void excluir(Filme filme);
+    public void excluir(int id);
 
     public List<Filme> pesquisarPorNome(String nome);
-
 }

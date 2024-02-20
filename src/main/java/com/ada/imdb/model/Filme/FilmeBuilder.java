@@ -1,7 +1,9 @@
-package com.ada.imdb.model;
+package com.ada.imdb.model.Filme;
+
+import com.ada.imdb.model.ator.Ator;
+import com.ada.imdb.model.diretor.Diretor;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FilmeBuilder {
