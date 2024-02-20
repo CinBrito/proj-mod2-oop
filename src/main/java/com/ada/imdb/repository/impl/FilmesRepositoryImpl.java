@@ -1,42 +1,44 @@
 package com.ada.imdb.repository.impl;
 
-public class FilmesRepositoryAction {
+import com.ada.imdb.model.Filme.Filme;
+import com.ada.imdb.repository.FilmesRepository;
 
-//    private static final List<Filme> filmes = new ArrayList<>();
-//    private static int proximoId = 0;
-//
-//    private FilmesRepositoryAction() {}
-//
-//    public static Filme inserir(Filme filme) {
-//        filme.setId(++proximoId);
-//        filmes.add(filme);
-//        return filme;
-//    }
-//
-//    public static Filme atualizarNome(int id, String nome) throws Exception {
-//        Optional<Filme> filme = filmes.stream().filter(f -> f.getId() == id).findFirst();
-//        if (filme.isPresent()) {
-//            filme.get().setNome(nome);
-//            return filme.get();
-//        }
-//
-//        throw new Exception("Filme não encontrado");
-//    }
-//
-//    public static void excluir(int id) {
-//        Optional<Filme> filme = filmes.stream().filter(f -> f.getId() == id).findFirst();
-//        filme.ifPresent(value -> filmes.remove(value));
-//    }
-//
-//    public static List<Filme> pesquisarPorNome(String nome) throws Exception {
-//        if (nome != null && !nome.isEmpty()) {
-//            return filmes.stream().filter(f -> f.getNome().contains(nome)).toList();
-//        }
-//
-//        throw new Exception("Nome inválido");
-//    }
-//
-//    public static List<Filme> getAll() {
-//        return new ArrayList<>(filmes);
-//    }
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+public class FilmesRepositoryImpl implements FilmesRepository {
+
+    private final List<Filme> filmes = new ArrayList<>();
+    private int contador = 0;
+
+    @Override
+    public Filme inserir(Filme filme) {
+        filme.setIdFilme(++contador);
+        filmes.add(filme);
+        return filme;
+    }
+
+    @Override
+    public Filme atualizar(int id, Filme filme) {
+        for (int i = 0; i < filmes.size(); i++) {
+            if (filmes.get(i).getIdFilme() == id) {
+                filme.setIdFilme(filmes.get(i).getIdFilme());
+                filmes.set(i, filme);
+                return filme;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public void excluir(int id) {
+        filmes.removeIf(filme -> filme.getIdFilme() == id);
+    }
+
+    @Override
+    public List<Filme> pesquisarPorNome(String titulo) {
+        return filmes.stream().filter(filme -> filme.getTitulo().toLowerCase().contains(titulo.toLowerCase())).toList();
+    }
 }

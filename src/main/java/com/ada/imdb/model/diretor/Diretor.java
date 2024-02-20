@@ -1,4 +1,4 @@
-package com.ada.imdb.model;
+package com.ada.imdb.model.diretor;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

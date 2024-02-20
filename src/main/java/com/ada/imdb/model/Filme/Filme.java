@@ -1,7 +1,9 @@
-package com.ada.imdb.model;
+package com.ada.imdb.model.Filme;
+
+import com.ada.imdb.model.ator.Ator;
+import com.ada.imdb.model.diretor.Diretor;
 
 import java.time.Duration;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,6 +26,22 @@ public class Filme {
 
     public static FilmeBuilder builder() {
         return new FilmeBuilder();
+    }
+
+    public int getIdFilme() {
+        return idFilme;
+    }
+
+    public void setIdFilme(int idFilme) {
+        this.idFilme = idFilme;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     @Override
