@@ -1,6 +1,7 @@
 package com.ada.imdb.controller;
 
 
+import com.ada.imdb.dto.FilmeDTO;
 import com.ada.imdb.model.Filme.Filme;
 import com.ada.imdb.repository.FilmesRepository;
 
@@ -14,8 +15,8 @@ public class FilmesController {
         this.filmesRepository = filmesRepository;
     }
 
-    public Filme inserirFilme(Filme filme) {
-        return filmesRepository.inserir(filme);
+    public Filme inserirFilme(FilmeDTO filme) {
+        return filmesRepository.inserir(filme.toFilme());
     }
 
     public Filme atualizarFilme(int id, Filme filme) {

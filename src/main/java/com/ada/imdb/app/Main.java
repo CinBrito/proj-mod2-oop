@@ -1,6 +1,6 @@
 package com.ada.imdb.app;
 
-import com.ada.imdb.model.Filme.FilmeDTO;
+import com.ada.imdb.dto.FilmeDTO;
 import com.ada.imdb.model.ator.Ator;
 import com.ada.imdb.model.diretor.Diretor;
 import com.ada.imdb.model.Filme.Filme;
@@ -46,7 +46,7 @@ public class Main {
 
         System.out.println(filme1);
 
-        FilmeDTO filme2 = new FilmeDTO(1, "Assassinos da Lua das Flores",List.of("Suspense", "Drama"),Duration.ofHours(3).plusMinutes(20),2023,"14",6.5,"Bla bla bla",List.of(ator1),List.of(diretor1));
+        FilmeDTO filme2 = new FilmeDTO("Assassinos da Lua das Flores",List.of("Suspense", "Drama"),Duration.ofHours(3).plusMinutes(20),2023,"14",6.5,"Bla bla bla",List.of(ator1),List.of(diretor1));
 
 
 
