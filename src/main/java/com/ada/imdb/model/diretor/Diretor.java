@@ -17,8 +17,36 @@ public class Diretor {
         return new DiretorBuilder();
     }
 
+    public int getIdDiretor() {
+        return idDiretor;
+    }
+
+    public void setIdDiretor(int idDiretor) {
+        this.idDiretor = idDiretor;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getPaisOrigem() {
+        return paisOrigem;
+    }
+
+    public void setPaisOrigem(String paisOrigem) {
+        this.paisOrigem = paisOrigem;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class DiretorBuilder {
         return this;
     }
 
-    public  DiretorBuilder nome(String nome) {
+    public DiretorBuilder nome(String nome) {
         this.diretor.nome = nome;
         return this;
     }

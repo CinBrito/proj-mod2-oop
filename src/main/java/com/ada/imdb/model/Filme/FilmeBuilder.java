@@ -1,4 +1,4 @@
-package com.ada.imdb.model.Filme;
+package com.ada.imdb.model.filme;
 
 import com.ada.imdb.model.ator.Ator;
 import com.ada.imdb.model.diretor.Diretor;
@@ -9,10 +9,6 @@ import java.util.List;
 public class FilmeBuilder {
 
     private final Filme filme = new Filme();
-
-//    private List<Ator> atores = new ArrayList<>();
-//
-//    private List<Diretor> diretores = new ArrayList<>();
 
     protected FilmeBuilder(){
 

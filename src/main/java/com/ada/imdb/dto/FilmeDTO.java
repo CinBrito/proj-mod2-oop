@@ -1,7 +1,7 @@
 package com.ada.imdb.dto;
 
 
-import com.ada.imdb.model.Filme.Filme;
+import com.ada.imdb.model.filme.Filme;
 import com.ada.imdb.model.ator.Ator;
 import com.ada.imdb.model.diretor.Diretor;
 

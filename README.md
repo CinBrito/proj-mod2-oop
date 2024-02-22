@@ -19,7 +19,7 @@ O projeto incorpora os conceitos fundamentais de programação orientada a objet
 ## Colaboradores 🤝
 
 - [Luiza Rocha](https://github.com/LuizaRock)
-- [Moisés Almeida](https://github.com/moiseslx)
+- [Moises Almeida](https://github.com/moiseslx)
 - [Pedro Augusto](https://github.com/PedroAugust00)
 - [Weslley Higor](https://github.com/weslleyhigor)
 - [Cíntia Brito](https://github.com/CinBrito)

@@ -1,4 +1,4 @@
-package com.ada.imdb.model.Filme;
+package com.ada.imdb.model.filme;
 
 import com.ada.imdb.model.ator.Ator;
 import com.ada.imdb.model.diretor.Diretor;
@@ -35,7 +35,6 @@ public class Filme {
     public void setIdFilme(int idFilme) {
         this.idFilme = idFilme;
     }
-
     public String getTitulo() {
         return titulo;
     }
@@ -44,14 +43,78 @@ public class Filme {
         this.titulo = titulo;
     }
 
+    public List<String> getGenero() {
+        return genero;
+    }
+
+    public void setGenero(List<String> genero) {
+        this.genero = genero;
+    }
+
+    public Duration getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Duration duracao) {
+        this.duracao = duracao;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public String getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(String classificacao) {
+        this.classificacao = classificacao;
+    }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public List<Ator> getAtores() {
+        return atores;
+    }
+
+    public void setAtores(List<Ator> atores) {
+        this.atores = atores;
+    }
+
+    public List<Diretor> getDiretores() {
+        return diretores;
+    }
+
+    public void setDiretores(List<Diretor> diretores) {
+        this.diretores = diretores;
+    }
+
     @Override
     public String toString() {
         return "Filme: " + titulo +
                 " (" + idFilme +
                 ") | Data de Lançamento: " + ano +
                 " | Duração: " + duracao +
-                " | Diretores: " + String.join(", ", diretores.stream()
+                " | Diretores: " + diretores.stream()
                 .map(Diretor::getNome)
-                .collect(Collectors.toList()));
+                .collect(Collectors.joining(", "));
     }
 }

@@ -2,7 +2,7 @@ package com.ada.imdb.controller;
 
 
 import com.ada.imdb.dto.FilmeDTO;
-import com.ada.imdb.model.Filme.Filme;
+import com.ada.imdb.model.filme.Filme;
 import com.ada.imdb.repository.FilmesRepository;
 
 import java.util.List;
