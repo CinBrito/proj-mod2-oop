@@ -9,11 +9,10 @@ import java.time.Duration;
 import java.util.List;
 
 public record FilmeDTO(String titulo, List<String> genero, Duration duracao, int ano,
-                    String classificacao, double nota, String sinopse, List<Ator> atores,
-                    List<Diretor> diretores) {
+                    String classificacao, double nota, String sinopse) {
 
     public Filme toFilme() {
-        return Filme.builder().titulo(titulo).genero(genero).duracao(duracao).ano(ano).classificacao(classificacao).nota(nota).sinopse(sinopse).atores(atores).diretores(diretores).build();
+        return Filme.builder().titulo(titulo).genero(genero).duracao(duracao).ano(ano).classificacao(classificacao).nota(nota).sinopse(sinopse).build();
     }
 
 }

@@ -82,4 +82,14 @@ public class FilmesRepositoryImpl implements FilmesRepository {
         return filmesDoDiretor;
     }
 
+    @Override
+    public Diretor adicionarDiretor(int idFilme, Diretor diretor) {
+      return null;
+    }
+
+    @Override
+    public Ator adicionarAtor(int idFilme, int idAtor) {
+        return null;
+    }
+
 }

@@ -6,6 +6,9 @@ import com.ada.imdb.controller.FilmesController;
 import com.ada.imdb.dto.AtorDTO;
 import com.ada.imdb.dto.DiretorDTO;
 import com.ada.imdb.dto.FilmeDTO;
+import com.ada.imdb.model.ator.Ator;
+import com.ada.imdb.model.catalogo.Catalogo;
+import com.ada.imdb.model.diretor.Diretor;
 import com.ada.imdb.repository.impl.AtorRepositoryImpl;
 import com.ada.imdb.repository.impl.DiretorRepositoryImpl;
 import com.ada.imdb.repository.impl.FilmesRepositoryImpl;
@@ -21,6 +24,9 @@ public class Main {
         AtorController atorController = new AtorController(new AtorRepositoryImpl());
         DiretorController diretorController = new DiretorController(new DiretorRepositoryImpl());
         FilmesController filmesController = new FilmesController(new FilmesRepositoryImpl());
+
+        // Criando catalogo
+        Catalogo catalogo = Catalogo.getInstance();
 
         // Criando DTOs para Ator
         AtorDTO atorDTO001 = new AtorDTO("Vin Diesel", "Estados Unidos", LocalDate.of(1967, 7, 18));
@@ -43,9 +49,9 @@ public class Main {
         diretorController.inserirDiretor(diretorDTO003);
 
         // Criando DTOs para Filmes
-        FilmeDTO filmeDTO001 = new FilmeDTO("Pulp Fiction", List.of("Crime"), Duration.ofMinutes(2 * 60 + 34), 1994, "L", 8.9, "A vida é bela", List.of(atorDTO001.toAtor(), atorDTO002.toAtor()), List.of(diretorDTO001.toDiretor()));
-        FilmeDTO filmeDTO002 = new FilmeDTO("Kill Bill", List.of("Action"), Duration.ofMinutes(60 + 56), 2003, "L", 8.9, "A vida é bela", List.of(atorDTO001.toAtor(), atorDTO002.toAtor()), List.of(diretorDTO002.toDiretor()));
-        FilmeDTO filmeDTO003 = new FilmeDTO("Kill Bill 2", List.of("Action"), Duration.ofMinutes(60 + 56), 2004, "L", 8.9, "A vida é bela", List.of(atorDTO003.toAtor(), atorDTO002.toAtor()), List.of(diretorDTO003.toDiretor()));
+        FilmeDTO filmeDTO001 = new FilmeDTO("Pulp Fiction", List.of("Crime"), Duration.ofMinutes(2 * 60 + 34), 1994, "L", 8.9, "A vida é bela");
+        FilmeDTO filmeDTO002 = new FilmeDTO("Kill Bill", List.of("Action"), Duration.ofMinutes(60 + 56), 2003, "L", 8.9, "A vida é bela");
+        FilmeDTO filmeDTO003 = new FilmeDTO("Kill Bill 2", List.of("Action"), Duration.ofMinutes(60 + 56), 2004, "L", 8.9, "A vida é bela");
 
         // Inserindo Filmes
         filmesController.inserirFilme(filmeDTO001);
@@ -62,10 +68,10 @@ public class Main {
 //        System.out.println(atorController.pesquisarAtorPorNome("Vin Diesel"));
 
         // Pesquisando por filmes pelo id - diretores
-        System.out.println(filmesController.pesquisarFilmePorDiretor(diretorDTO001.toDiretor().getIdDiretor()));
+//        System.out.println(filmesController.pesquisarFilmePorDiretor(diretorDTO001.toDiretor().getIdDiretor()));
 
 //        // Pesquisando por filmes pelo id - atores
-//        System.out.println(filmesController.pesquisarFilmePorAtor(atorDTO001.toAtor().getIdAtor()));
+        System.out.println(filmesController.pesquisarFilmePorAtor(catalogo.getAtores().get(0).getIdAtor()));
 //
 //        // Listando todos os filmes
 //        System.out.println(filmesController.listarFilmes());
@@ -73,8 +79,10 @@ public class Main {
 //        // Listando todos os atores
 //        System.out.println(atorController.listarAtores());
 //
-//        // Listabdo todos os diretores
+        // Listando todos os diretores
 //        System.out.println(diretorController.listarDiretores());
+
+
 
     }
 }
