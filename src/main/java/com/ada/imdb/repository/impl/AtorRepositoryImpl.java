@@ -1,14 +1,14 @@
 package com.ada.imdb.repository.impl;
 
 import com.ada.imdb.model.ator.Ator;
-import com.ada.imdb.model.catalogo.Catalogo;
 import com.ada.imdb.repository.AtorRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AtorRepositoryImpl implements AtorRepository {
 
-    private final List<Ator> atores = Catalogo.getInstance().getAtores();
+    private final List<Ator> atores = new ArrayList<>();
     private int contador = 0;
 
     @Override

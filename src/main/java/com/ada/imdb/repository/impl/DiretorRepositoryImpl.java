@@ -1,14 +1,15 @@
 package com.ada.imdb.repository.impl;
 
-import com.ada.imdb.model.catalogo.Catalogo;
 import com.ada.imdb.model.diretor.Diretor;
 import com.ada.imdb.repository.DiretorRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DiretorRepositoryImpl implements DiretorRepository {
 
-    private final List<Diretor> diretores = Catalogo.getInstance().getDiretores();
+    private final List<Diretor> diretores = new ArrayList<>();
     private int contador = 0;
 
     @Override

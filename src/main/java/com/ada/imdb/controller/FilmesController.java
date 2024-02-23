@@ -1,7 +1,11 @@
 package com.ada.imdb.controller;
 
 
+import com.ada.imdb.dto.AtorDTO;
+import com.ada.imdb.dto.DiretorDTO;
 import com.ada.imdb.dto.FilmeDTO;
+import com.ada.imdb.model.ator.Ator;
+import com.ada.imdb.model.diretor.Diretor;
 import com.ada.imdb.model.filme.Filme;
 import com.ada.imdb.repository.FilmesRepository;
 
@@ -43,5 +47,12 @@ public class FilmesController {
         return filmesRepository.listarTodos();
     }
 
+    public Diretor adicionarDiretor(int idFilme, DiretorDTO diretor) {
+        return filmesRepository.adicionarDiretor(idFilme, diretor.toDiretor());
+    }
+
+    public Ator adicionarAtor(int idFilme, AtorDTO ator) {
+        return filmesRepository.adicionarAtor(idFilme, ator.toAtor());
+    }
 }
 

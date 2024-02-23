@@ -11,5 +11,5 @@ public interface FilmesRepository extends CrudRepository<Filme> {
     public List<Filme> pesquisarPorAtor(int idAtor);
     public List<Filme> pesquisarPorDiretor(int idDiretor);
     public Diretor adicionarDiretor(int idFilme, Diretor diretor);
-    public Ator adicionarAtor(int idFilme, int idAtor);
+    public Ator adicionarAtor(int idFilme, Ator ator);
 }

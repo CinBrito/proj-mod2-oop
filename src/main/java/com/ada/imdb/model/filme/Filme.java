@@ -110,11 +110,6 @@ public class Filme {
     @Override
     public String toString() {
         return "Filme: " + titulo +
-                " (" + idFilme +
-                ") | Data de Lançamento: " + ano +
-                " | Duração: " + duracao +
-                " | Diretores: " + diretores.stream()
-                .map(Diretor::getNome)
-                .collect(Collectors.joining(", "));
+                " (" + idFilme + ")";
     }
 }

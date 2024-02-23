@@ -1,18 +1,16 @@
 package com.ada.imdb.repository.impl;
 
 import com.ada.imdb.model.ator.Ator;
-import com.ada.imdb.model.catalogo.Catalogo;
 import com.ada.imdb.model.diretor.Diretor;
 import com.ada.imdb.model.filme.Filme;
 import com.ada.imdb.repository.FilmesRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FilmesRepositoryImpl implements FilmesRepository {
 
-    private final List<Filme> filmes = Catalogo.getInstance().getFilmes();
+    private final List<Filme> filmes = new ArrayList<>();
     private int contador = 0;
 
     @Override
@@ -56,10 +54,8 @@ public class FilmesRepositoryImpl implements FilmesRepository {
 
         for (Filme filme : filmes) {
             for (Ator ator : filme.getAtores()) {
-                if (ator.getIdAtor() == idAtor) {
+                if (ator.getIdAtor() == idAtor)
                     filmesDoAtor.add(filme);
-                    break; // Se o ator estiver no filme, não é necessário verificar os outros atores do mesmo filme
-                }
             }
         }
 
@@ -84,11 +80,25 @@ public class FilmesRepositoryImpl implements FilmesRepository {
 
     @Override
     public Diretor adicionarDiretor(int idFilme, Diretor diretor) {
-      return null;
+        for (Filme filme : filmes) {
+            if (filme.getIdFilme() == idFilme) {
+                filme.getDiretores().add(diretor);
+                return diretor;
+            }
+        }
+
+        return null;
     }
 
     @Override
-    public Ator adicionarAtor(int idFilme, int idAtor) {
+    public Ator adicionarAtor(int idFilme, Ator ator) {
+        for (Filme filme : filmes) {
+            if (filme.getIdFilme() == idFilme) {
+                filme.getAtores().add(ator);
+                return ator;
+            }
+        }
+
         return null;
     }
 
