@@ -46,26 +46,35 @@ public class FilmesRepositoryImpl implements FilmesRepository {
     }
 
     @Override
-    public List<Integer> getAtoresId(int idFilme) {
+    public List<Filme> pesquisarPorAtor(int idAtor) {
+        List<Filme> filmesDoAtor = new ArrayList<>();
+
         for (Filme filme : filmes) {
-            if (filme.getIdFilme() == idFilme) {
-                return filme.getAtores().stream()
-                        .map(Ator::getIdAtor)
-                        .collect(Collectors.toList());
+            for (Ator ator : filme.getAtores()) {
+                if (ator.getIdAtor() == idAtor) {
+                    filmesDoAtor.add(filme);
+                    break; // Se o ator estiver no filme, não é necessário verificar os outros atores do mesmo filme
+                }
             }
         }
-        return new ArrayList<>();
+
+        return filmesDoAtor;
     }
 
     @Override
-    public List<Integer> getDiretoresId(int idFilme) {
+    public List<Filme> pesquisarPorDiretor(int idDiretor) {
+        List<Filme> filmesDoDiretor = new ArrayList<>();
+
         for (Filme filme : filmes) {
-            if (filme.getIdFilme() == idFilme) {
-                return filme.getDiretores().stream()
-                        .map(Diretor::getIdDiretor)
-                        .collect(Collectors.toList());
+            for (Diretor diretor : filme.getDiretores()) {
+                if (diretor.getIdDiretor() == idDiretor) {
+                    filmesDoDiretor.add(filme);
+                    break; // Se o diretor estiver no filme, não é necessário verificar os outros diretores do mesmo filme
+                }
             }
         }
-        return new ArrayList<>();
+
+        return filmesDoDiretor;
     }
+
 }

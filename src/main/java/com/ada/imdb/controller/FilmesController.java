@@ -19,8 +19,8 @@ public class FilmesController {
         return filmesRepository.inserir(filme.toFilme());
     }
 
-    public Filme atualizarFilme(int id, Filme filme) {
-        return filmesRepository.atualizar(id, filme);
+    public Filme atualizarFilme(int id, FilmeDTO filme) {
+        return filmesRepository.atualizar(id, filme.toFilme());
     }
 
     public void excluirFilme(int id) {
@@ -29,5 +29,13 @@ public class FilmesController {
 
     public List<Filme> pesquisarFilmePorNome(String nome) {
         return filmesRepository.pesquisarPorNome(nome);
+    }
+
+    public List<Filme> pesquisarFilmePorDiretor(int idDiretor) {
+        return filmesRepository.pesquisarPorDiretor(idDiretor);
+    }
+
+    public List<Filme> pesquisarFilmePorAtor(int idAtor) {
+        return filmesRepository.pesquisarPorAtor(idAtor);
     }
 }

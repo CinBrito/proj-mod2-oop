@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface FilmesRepository extends CrudRepository<Filme> {
 
-    public List<Integer> getAtoresId(int idFilme);
-    public List<Integer> getDiretoresId(int idFilme);
+    public List<Filme> pesquisarPorAtor(int idAtor);
+    public List<Filme> pesquisarPorDiretor(int idDiretor);
 }
