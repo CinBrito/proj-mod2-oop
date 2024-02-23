@@ -28,4 +28,8 @@ public class AtorController {
     public List<Ator> pesquisarAtorPorNome(String nome) {
         return atorRepository.pesquisarPorNome(nome);
     }
+
+    public List<Ator> listarAtores () {
+        return atorRepository.listarTodos();
+    }
 }

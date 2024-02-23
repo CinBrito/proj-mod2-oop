@@ -38,4 +38,10 @@ public class FilmesController {
     public List<Filme> pesquisarFilmePorAtor(int idAtor) {
         return filmesRepository.pesquisarPorAtor(idAtor);
     }
+
+    public List<Filme> listarFilmes() {
+        return filmesRepository.listarTodos();
+    }
+
 }
+

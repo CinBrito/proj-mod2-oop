@@ -11,4 +11,6 @@ public interface CrudRepository<T> {
     public void excluir(int id);
 
     public List<T> pesquisarPorNome(String nome);
+
+    public List<T> listarTodos();
 }

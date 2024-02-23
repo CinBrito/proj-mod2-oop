@@ -23,9 +23,9 @@ public class Main {
         FilmesController filmesController = new FilmesController(new FilmesRepositoryImpl());
 
         // Criando DTOs para Ator
-        AtorDTO atorDTO001 = new AtorDTO(0, "Vin Diesel", "Estados Unidos", LocalDate.of(1967, 7, 18));
-        AtorDTO atorDTO002 = new AtorDTO(0, "Paul Walker", "Estados Unidos", LocalDate.of(1973, 9, 12));
-        AtorDTO atorDTO003 = new AtorDTO(0, "Dwayne Johnson", "Estados Unidos", LocalDate.of(1972, 5, 2));
+        AtorDTO atorDTO001 = new AtorDTO("Vin Diesel", "Estados Unidos", LocalDate.of(1967, 7, 18));
+        AtorDTO atorDTO002 = new AtorDTO("Paul Walker", "Estados Unidos", LocalDate.of(1973, 9, 12));
+        AtorDTO atorDTO003 = new AtorDTO("Dwayne Johnson", "Estados Unidos", LocalDate.of(1972, 5, 2));
 
         // Inserindo Atores
         atorController.inserirAtor(atorDTO001);
@@ -33,9 +33,9 @@ public class Main {
         atorController.inserirAtor(atorDTO003);
 
         // Criando DTOs para Diretor
-        DiretorDTO diretorDTO001 = new DiretorDTO(0, "Quentin Tarantino", "Estados Unidos", LocalDate.of(1963, 3, 27));
-        DiretorDTO diretorDTO002 = new DiretorDTO(0, "Steven Spielberg", "Estados Unidos", LocalDate.of(1946, 12, 18));
-        DiretorDTO diretorDTO003 = new DiretorDTO(0, "Martin Scorsese", "Estados Unidos", LocalDate.of(1942, 11, 17));
+        DiretorDTO diretorDTO001 = new DiretorDTO("Quentin Tarantino", "Estados Unidos", LocalDate.of(1963, 3, 27));
+        DiretorDTO diretorDTO002 = new DiretorDTO("Steven Spielberg", "Estados Unidos", LocalDate.of(1946, 12, 18));
+        DiretorDTO diretorDTO003 = new DiretorDTO("Martin Scorsese", "Estados Unidos", LocalDate.of(1942, 11, 17));
 
         // Inserindo Diretores
         diretorController.inserirDiretor(diretorDTO001);
@@ -52,19 +52,29 @@ public class Main {
         filmesController.inserirFilme(filmeDTO002);
         filmesController.inserirFilme(filmeDTO003);
 
-        // Pesquisando por nomes - filmes
-        System.out.println(filmesController.pesquisarFilmePorNome("Kill Bill"));
+//        // Pesquisando por nomes - filmes
+//        System.out.println(filmesController.pesquisarFilmePorNome("Kill Bill"));
 
-        // Pesquisando por nomes - diretores
-        System.out.println(diretorController.pesquisarDiretorPorNome("Quentin Tarantino"));
+//        // Pesquisando por nomes - diretores
+//        System.out.println(diretorController.pesquisarDiretorPorNome("Quentin Tarantino"));
 
         // Pesquisando por nomes - atores
-        System.out.println(atorController.pesquisarAtorPorNome("Vin Diesel"));
+//        System.out.println(atorController.pesquisarAtorPorNome("Vin Diesel"));
 
         // Pesquisando por filmes pelo id - diretores
         System.out.println(filmesController.pesquisarFilmePorDiretor(diretorDTO001.toDiretor().getIdDiretor()));
 
-        // Pesquisando por filmes pelo id - atores
-        System.out.println(filmesController.pesquisarFilmePorAtor(atorDTO001.toAtor().getIdAtor()));
+//        // Pesquisando por filmes pelo id - atores
+//        System.out.println(filmesController.pesquisarFilmePorAtor(atorDTO001.toAtor().getIdAtor()));
+//
+//        // Listando todos os filmes
+//        System.out.println(filmesController.listarFilmes());
+//
+//        // Listando todos os atores
+//        System.out.println(atorController.listarAtores());
+//
+//        // Listabdo todos os diretores
+//        System.out.println(diretorController.listarDiretores());
+
     }
 }

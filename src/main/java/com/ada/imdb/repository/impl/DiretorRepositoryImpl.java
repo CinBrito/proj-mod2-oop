@@ -42,4 +42,9 @@ public class DiretorRepositoryImpl implements DiretorRepository {
                 .filter(diretor -> diretor.getNome().equalsIgnoreCase(nome))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<Diretor> listarTodos() {
+        return diretores.stream().toList();
+    }
 }

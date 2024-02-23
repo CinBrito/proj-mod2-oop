@@ -46,6 +46,11 @@ public class FilmesRepositoryImpl implements FilmesRepository {
     }
 
     @Override
+    public List<Filme> listarTodos() {
+        return filmes.stream().toList();
+    }
+
+    @Override
     public List<Filme> pesquisarPorAtor(int idAtor) {
         List<Filme> filmesDoAtor = new ArrayList<>();
 

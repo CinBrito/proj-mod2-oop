@@ -4,9 +4,9 @@ import com.ada.imdb.model.ator.Ator;
 
 import java.time.LocalDate;
 
-public record AtorDTO(int idAtor, String nome, String paisOrigem, LocalDate dataNascimento) {
+public record AtorDTO(String nome, String paisOrigem, LocalDate dataNascimento) {
 
     public Ator toAtor() {
-        return Ator.builder().idAtor(idAtor).nome(nome).paisOrigem(paisOrigem).dataNascimento(dataNascimento).build();
+        return Ator.builder().nome(nome).paisOrigem(paisOrigem).dataNascimento(dataNascimento).build();
     }
 }

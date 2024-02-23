@@ -40,4 +40,9 @@ public class AtorRepositoryImpl implements AtorRepository {
     public List<Ator> pesquisarPorNome(String nome) {
         return atores.stream().filter(ator -> ator.getNome().toLowerCase().contains(nome.toLowerCase())).toList();
     }
+
+    @Override
+    public List<Ator> listarTodos() {
+        return atores.stream().toList();
+    }
 }

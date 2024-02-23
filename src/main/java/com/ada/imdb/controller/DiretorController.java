@@ -28,4 +28,8 @@ public class DiretorController {
     public List<Diretor> pesquisarDiretorPorNome(String nome) {
         return diretorRepository.pesquisarPorNome(nome);
     }
+
+    public List<Diretor> listarDiretores() {
+        return diretorRepository.listarTodos();
+    }
 }
